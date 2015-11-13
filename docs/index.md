@@ -1,2 +1,2 @@
-Welcome to giosgapps_todo_example!
+Welcome to GiosgApps todo example!
 ==============================

@@ -1,32 +1,29 @@
 
 
-# giosgapps_todo_example
+# GiosgApp todo example
 
-giosgapps_todo_example is a _short description_. It is built with [Python][0] using the [Django Web Framework][1].
-
-This project has the following basic apps:
-
-* App1 (short desc)
-* App2 (short desc)
-* App3 (short desc)
+Todo list app for giosg Live written using Django framework and SwampDragon for realtime notifications.
 
 ## Installation
+TODO
 
 ### Quick start
 
-To set up a development environment quickly, first install Python 3. It
-comes with virtualenv built-in. So create a virtual env by:
+1. Install virtualenv and create new environment
+`virtualenv giosgapps-todo-example`
 
-    1. `$ python3 -m venv giosgapps_todo_example`
-    2. `$ . giosgapps_todo_example/bin/activate`
+2. Clone this repository
+`git clone https://github.com/mentholi/giosgapps-todo-example.git`
 
-Install all dependencies:
+3. Install all depencies:
+`pip install -r requirements.txt`
 
-    pip install -r requirements.txt
+4. Run migrations:
+`python manage.py migrate`
 
-Run migrations:
-
-    python manage.py migrate
+5. Run app by starting Django server and Tornado server:
+Run `python manage.py runserver_plus`
+and `python server.py`
 
 ### Detailed instructions
 
