@@ -75,10 +75,14 @@ INSTALLED_APPS = (
     'crispy_forms',
     'easy_thumbnails',
 
+    'swampdragon',
+    'django_extensions',
+
+
+    # local apps
     'profiles',
     'accounts',
-
-    'django_extensions',
+    'todo',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -139,3 +143,7 @@ LOGIN_REDIRECT_URL = reverse_lazy("profiles:show_self")
 LOGIN_URL = reverse_lazy("accounts:login")
 
 THUMBNAIL_EXTENSION = 'png'     # Or any extn for your thumbnails
+
+# SwampDragon settings
+SWAMP_DRAGON_CONNECTION = ('swampdragon.connections.sockjs_connection.DjangoSubscriberConnection', '/data')
+DRAGON_URL = 'http://localhost:9999/'

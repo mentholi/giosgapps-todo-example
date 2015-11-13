@@ -7,3 +7,4 @@ django-authtools>=1.2.0
 easy-thumbnails>=2.2
 ipython
 django-extensions==1.5.9
+swampdragon==0.4.2.2
