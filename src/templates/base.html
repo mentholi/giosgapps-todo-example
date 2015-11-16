@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="TodoApp">
     {% load staticfiles %}
     {% load thumbnail %}
-    
+    {% load static %}
+    {% load swampdragon_tags %}
+
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -66,7 +68,7 @@
 			{{ user.get_full_name|truncatechars:20 }}
 			<span class="caret"></span>
 		    </a>
-		    
+
                   <ul class="dropdown-menu" role="menu">
                     <li><a href="{% url 'profiles:show_self' %}">Profile</a></li>
                     <li><a href="{% url 'accounts:logout' %}">Logout</a></li>
@@ -94,7 +96,7 @@
 
     {% block splash %}
     {% endblock splash %}
-    
+
     {% block container %}
     <div class="container">
 
@@ -111,18 +113,18 @@
       <!-- Some social button for contact will do -->
       <a name="contact"></a>
       <div class="container">
-            <div class="footer">
-        <div class="row">
-          <div class="col-lg-6">
-              <p>&copy; Company {% now 'Y' %}</p>
-          </div>
-          <div class="col-lg-6 text-right">
-            Connect with us on
-            <a href="#"><i class="fa fa-facebook"></i> Facebook</a> or
-            <a href="#"><i class="fa fa-twitter"></i> Twitter</a>
+        <div class="footer">
+          <div class="row">
+            <div class="col-lg-6">
+                <p>&copy; Arsi Halttunen {% now 'Y' %}</p>
+            </div>
+            <div class="col-lg-6 text-right">
+              Giosg on
+              <a href="#"><i class="fa fa-facebook"></i> Facebook</a> |
+              <a href="#"><i class="fa fa-twitter"></i> Twitter</a>
+            </div>
           </div>
         </div>
-            </div>
       </div>
     {% endblock %}
 
@@ -131,6 +133,19 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+
+    <!-- AngularJS -->
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js"></script>
+
+    <!-- SwampDragon -->
+    {% swampdragon_settings %}
+    <script type="text/javascript" src="{% static 'swampdragon/js/dist/swampdragon.min.js' %}"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}swampdragon/js/dist/datamapper.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}swampdragon/js/angular/services.js"></script>
+
+    <!-- Angular app -->
+    <script type="text/javascript" src="{{ STATIC_URL }}todo/app.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}todo/controllers.js"></script>
     {% block scripts %}
     {% endblock scripts %}
   </body>
